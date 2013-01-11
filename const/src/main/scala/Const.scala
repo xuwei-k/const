@@ -28,8 +28,7 @@ object Const{
   def impl(c: Context): c.Expr[String] = {
     import c.universe._
     val enclosingValName = definingValName(c)
-    val name = c.Expr[String]( Literal(Constant(enclosingValName)) )
-    reify { name.splice }
+    c.Expr[String]( Literal(Constant(enclosingValName)) )
   }
 
 }
